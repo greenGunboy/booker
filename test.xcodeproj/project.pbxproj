@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A2F5F4E1CBB961D00041476 /* food.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A2F5F4D1CBB961D00041476 /* food.plist */; };
+		5A2F5F501CBB963600041476 /* drink.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A2F5F4F1CBB963600041476 /* drink.plist */; };
+		5AA7AA521CB915C700F8F2C7 /* guestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA511CB915C700F8F2C7 /* guestListViewController.swift */; };
+		5AA7AA541CB915FF00F8F2C7 /* guestAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA531CB915FF00F8F2C7 /* guestAddViewController.swift */; };
+		5AA7AA561CB9162F00F8F2C7 /* owderAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA551CB9162F00F8F2C7 /* owderAddViewController.swift */; };
+		5AA7AA581CB9165F00F8F2C7 /* owderResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA571CB9165F00F8F2C7 /* owderResultViewController.swift */; };
+		5AA7AA5A1CB9169300F8F2C7 /* foodOwderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA591CB9169300F8F2C7 /* foodOwderListViewController.swift */; };
+		5AA7AA5C1CB916A400F8F2C7 /* drinkOwderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA5B1CB916A400F8F2C7 /* drinkOwderListViewController.swift */; };
+		5AA7AA5E1CB916D000F8F2C7 /* editViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA5D1CB916D000F8F2C7 /* editViewController.swift */; };
+		5AA7AA601CB916F600F8F2C7 /* foodEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA5F1CB916F600F8F2C7 /* foodEditViewController.swift */; };
+		5AA7AA621CB9170300F8F2C7 /* drinkEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA611CB9170300F8F2C7 /* drinkEditViewController.swift */; };
+		5AA7AA641CB9174400F8F2C7 /* foodAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA631CB9174400F8F2C7 /* foodAddViewController.swift */; };
+		5AA7AA661CB9174E00F8F2C7 /* drinkAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA651CB9174E00F8F2C7 /* drinkAddViewController.swift */; };
+		5AA7AA681CB917B800F8F2C7 /* foodMenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA671CB917B800F8F2C7 /* foodMenuListViewController.swift */; };
+		5AA7AA6A1CB917CA00F8F2C7 /* drinkMenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7AA691CB917CA00F8F2C7 /* drinkMenuListViewController.swift */; };
 		5AE1907B1C85F1B100183ABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1907A1C85F1B100183ABE /* AppDelegate.swift */; };
 		5AE1907D1C85F1B100183ABE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1907C1C85F1B100183ABE /* ViewController.swift */; };
 		5AE190801C85F1B100183ABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1907E1C85F1B100183ABE /* Main.storyboard */; };
@@ -34,6 +49,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A2F5F4D1CBB961D00041476 /* food.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = food.plist; sourceTree = "<group>"; };
+		5A2F5F4F1CBB963600041476 /* drink.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = drink.plist; sourceTree = "<group>"; };
+		5AA7AA511CB915C700F8F2C7 /* guestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guestListViewController.swift; sourceTree = "<group>"; };
+		5AA7AA531CB915FF00F8F2C7 /* guestAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guestAddViewController.swift; sourceTree = "<group>"; };
+		5AA7AA551CB9162F00F8F2C7 /* owderAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = owderAddViewController.swift; sourceTree = "<group>"; };
+		5AA7AA571CB9165F00F8F2C7 /* owderResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = owderResultViewController.swift; sourceTree = "<group>"; };
+		5AA7AA591CB9169300F8F2C7 /* foodOwderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = foodOwderListViewController.swift; sourceTree = "<group>"; };
+		5AA7AA5B1CB916A400F8F2C7 /* drinkOwderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drinkOwderListViewController.swift; sourceTree = "<group>"; };
+		5AA7AA5D1CB916D000F8F2C7 /* editViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editViewController.swift; sourceTree = "<group>"; };
+		5AA7AA5F1CB916F600F8F2C7 /* foodEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = foodEditViewController.swift; sourceTree = "<group>"; };
+		5AA7AA611CB9170300F8F2C7 /* drinkEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drinkEditViewController.swift; sourceTree = "<group>"; };
+		5AA7AA631CB9174400F8F2C7 /* foodAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = foodAddViewController.swift; sourceTree = "<group>"; };
+		5AA7AA651CB9174E00F8F2C7 /* drinkAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drinkAddViewController.swift; sourceTree = "<group>"; };
+		5AA7AA671CB917B800F8F2C7 /* foodMenuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = foodMenuListViewController.swift; sourceTree = "<group>"; };
+		5AA7AA691CB917CA00F8F2C7 /* drinkMenuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drinkMenuListViewController.swift; sourceTree = "<group>"; };
 		5AE190771C85F1B100183ABE /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE1907A1C85F1B100183ABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AE1907C1C85F1B100183ABE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +129,21 @@
 			children = (
 				5AE1907A1C85F1B100183ABE /* AppDelegate.swift */,
 				5AE1907C1C85F1B100183ABE /* ViewController.swift */,
+				5AA7AA5D1CB916D000F8F2C7 /* editViewController.swift */,
+				5AA7AA511CB915C700F8F2C7 /* guestListViewController.swift */,
+				5AA7AA531CB915FF00F8F2C7 /* guestAddViewController.swift */,
+				5AA7AA551CB9162F00F8F2C7 /* owderAddViewController.swift */,
+				5AA7AA571CB9165F00F8F2C7 /* owderResultViewController.swift */,
+				5AA7AA5B1CB916A400F8F2C7 /* drinkOwderListViewController.swift */,
+				5AA7AA611CB9170300F8F2C7 /* drinkEditViewController.swift */,
+				5AA7AA651CB9174E00F8F2C7 /* drinkAddViewController.swift */,
+				5AA7AA691CB917CA00F8F2C7 /* drinkMenuListViewController.swift */,
+				5AA7AA591CB9169300F8F2C7 /* foodOwderListViewController.swift */,
+				5AA7AA5F1CB916F600F8F2C7 /* foodEditViewController.swift */,
+				5AA7AA631CB9174400F8F2C7 /* foodAddViewController.swift */,
+				5AA7AA671CB917B800F8F2C7 /* foodMenuListViewController.swift */,
+				5A2F5F4D1CBB961D00041476 /* food.plist */,
+				5A2F5F4F1CBB963600041476 /* drink.plist */,
 				5AE1907E1C85F1B100183ABE /* Main.storyboard */,
 				5AE190811C85F1B100183ABE /* Assets.xcassets */,
 				5AE190831C85F1B100183ABE /* LaunchScreen.storyboard */,
@@ -229,8 +274,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A2F5F4E1CBB961D00041476 /* food.plist in Resources */,
 				5AE190851C85F1B100183ABE /* LaunchScreen.storyboard in Resources */,
 				5AE190821C85F1B100183ABE /* Assets.xcassets in Resources */,
+				5A2F5F501CBB963600041476 /* drink.plist in Resources */,
 				5AE190801C85F1B100183ABE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +303,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA7AA561CB9162F00F8F2C7 /* owderAddViewController.swift in Sources */,
+				5AA7AA6A1CB917CA00F8F2C7 /* drinkMenuListViewController.swift in Sources */,
+				5AA7AA621CB9170300F8F2C7 /* drinkEditViewController.swift in Sources */,
 				5AE1907D1C85F1B100183ABE /* ViewController.swift in Sources */,
+				5AA7AA521CB915C700F8F2C7 /* guestListViewController.swift in Sources */,
+				5AA7AA681CB917B800F8F2C7 /* foodMenuListViewController.swift in Sources */,
+				5AA7AA661CB9174E00F8F2C7 /* drinkAddViewController.swift in Sources */,
+				5AA7AA581CB9165F00F8F2C7 /* owderResultViewController.swift in Sources */,
+				5AA7AA601CB916F600F8F2C7 /* foodEditViewController.swift in Sources */,
+				5AA7AA641CB9174400F8F2C7 /* foodAddViewController.swift in Sources */,
+				5AA7AA5E1CB916D000F8F2C7 /* editViewController.swift in Sources */,
+				5AA7AA5A1CB9169300F8F2C7 /* foodOwderListViewController.swift in Sources */,
+				5AA7AA5C1CB916A400F8F2C7 /* drinkOwderListViewController.swift in Sources */,
 				5AE1907B1C85F1B100183ABE /* AppDelegate.swift in Sources */,
+				5AA7AA541CB915FF00F8F2C7 /* guestAddViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +542,7 @@
 				5AE190A11C85F1B100183ABE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AE190A21C85F1B100183ABE /* Build configuration list for PBXNativeTarget "testTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +551,7 @@
 				5AE190A41C85F1B100183ABE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AE190A51C85F1B100183ABE /* Build configuration list for PBXNativeTarget "testUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +560,7 @@
 				5AE190A71C85F1B100183ABE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
