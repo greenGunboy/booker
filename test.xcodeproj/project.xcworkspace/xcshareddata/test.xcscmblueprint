@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "302478A044C19FF22B9567E27BED5134A3314F7E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C7BE8FDC2BA6EA4F3663761F3814E1203B04DC1A" : 0,
+    "302478A044C19FF22B9567E27BED5134A3314F7E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8E1B2854-AA4A-4639-8CB4-D97CB3E2E689",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C7BE8FDC2BA6EA4F3663761F3814E1203B04DC1A" : "",
+    "302478A044C19FF22B9567E27BED5134A3314F7E" : "test.xcodeproj\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : ".",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : ".",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/greenGunboy\/booker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "302478A044C19FF22B9567E27BED5134A3314F7E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/greenGunboy\/booker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C7BE8FDC2BA6EA4F3663761F3814E1203B04DC1A"
+    }
+  ]
+}

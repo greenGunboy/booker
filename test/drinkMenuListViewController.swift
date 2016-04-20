@@ -48,7 +48,7 @@ class drinkMenuListViewController: UIViewController, UITableViewDelegate, UITabl
         var ud = NSUserDefaults.standardUserDefaults()
         var drinkList: NSArray! = ud.objectForKey("drink") as! NSArray
         var cell = UITableViewCell(style: .Default,reuseIdentifier: "myCell")
-        cell.textLabel?.text = "\(drinkList[indexPath.row]["name"] as! String)　　　¥\(drinkList[indexPath.row]["price"] as! String)"
+        cell.textLabel?.text = "\(drinkList[indexPath.row]["name"] as! String)　　　¥\(drinkList[indexPath.row]["pricedrink"] as! Int)"
         cell.accessoryType = .DisclosureIndicator
         
         return cell
@@ -62,7 +62,7 @@ class drinkMenuListViewController: UIViewController, UITableViewDelegate, UITabl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "drinkEditView" {
             var listVC = segue.destinationViewController as! drinkEditViewController
-            listVC.scSeletedIndex = selectedIndex
+            listVC.scSelectedIndex = selectedIndex
         }
     }
     

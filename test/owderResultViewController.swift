@@ -12,7 +12,10 @@ class owderResultViewController: UIViewController {
     
     var foodArray = []
     var drinkArray = []
-    var ha = []
+    var foodCheck = [Int]()
+    var drinkCheck = [Int]()
+    var num = 0
+    var num2 = 0
     
     @IBOutlet weak var guestNameLabel: UILabel!
     @IBOutlet weak var checkLabel: UILabel!
@@ -34,21 +37,28 @@ class owderResultViewController: UIViewController {
         var ud = NSUserDefaults.standardUserDefaults()
         var udResult:NSArray = ud.objectForKey("name") as! NSArray
         self.guestNameLabel.text = "\(udResult[a] as! String)様"
+        
         if ud.objectForKey("guest\(a)") != nil {
             foodArray = ud.objectForKey("guest\(a)") as! [NSDictionary]
-            var i = 1
-//            var ab /= foodArray[i]["price"] as! Int
-            var bv = foodArray[1]["price"] as! Int
-            
-            for var i = 0; i <= foodArray.count; i += 1 {
-//                var ab = foodArray[i]["price"] as! Int
-                ha = foodArray[i]["price"] as! [Int]
-                print(ha)
+            for var i = 0; i <= foodArray.count - 1; i += 1 {
+                var fPrice = foodArray[i]["price"] as! Int
+                foodCheck.append(fPrice as! Int)
             }
-//            var plus = { (a: Int, b: Int) -> Int in a + b }
-//            var num = ha.reduce(0, combine: plus)
-//            self.checkLabel.text = "\(num)"
         }
+        
+        if ud.objectForKey("guest\(a)drink") != nil {
+            drinkArray = ud.objectForKey("guest\(a)drink") as! [NSDictionary]
+            for var i = 0; i <= drinkArray.count - 1; i += 1 {
+                var dPrice = drinkArray[i]["pricedrink"] as! Int
+                drinkCheck.append(dPrice as! Int)
+            }
+        }
+            
+        var plus = { (a: Int, b: Int) -> Int in a + b }
+        num = foodCheck.reduce(0, combine: plus)
+        num2 = drinkCheck.reduce(0, combine: plus)
+        self.checkLabel.text = "\(num + num2)"
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

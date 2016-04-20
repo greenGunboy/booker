@@ -13,7 +13,7 @@ class drinkEditViewController: UIViewController {
     @IBOutlet weak var drinkName: UITextField!
     @IBOutlet weak var drinkPrice: UITextField!
     
-    var scSeletedIndex:Int = 0
+    var scSelectedIndex:Int = 0
     var drinkMenu:[NSDictionary] = []
     
     override func viewDidLoad() {
@@ -31,26 +31,27 @@ class drinkEditViewController: UIViewController {
         var ud = NSUserDefaults.standardUserDefaults()
         drinkMenu = ud.objectForKey("drink") as! [NSDictionary]
         
-        drinkName.text = drinkMenu[scSeletedIndex]["name"] as! String
-        drinkPrice.text = drinkMenu[scSeletedIndex]["price"] as! String
+        drinkName.text = drinkMenu[scSelectedIndex]["name"] as! String
+        print(drinkMenu[scSelectedIndex]["pricedrink"] as! Int)
+        self.drinkPrice.text = "\(drinkMenu[scSelectedIndex]["pricedrink"] as! Int)"
     }
     
     @IBAction func drinkEditBtn(sender: UIButton) {
         var name = drinkName.text
-        var price = drinkPrice.text
+        var price = Int(drinkPrice.text!)
         
-        if name == "" && price == "" {
+        if name == "" && price == 0 {
             let alertController = UIAlertController(title: "空白があります", message: "入力してください", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             presentViewController(alertController, animated: true, completion: nil)
         }else{
             var ud = NSUserDefaults.standardUserDefaults()
             drinkMenu = ud.objectForKey("drink") as! [NSDictionary]
-            drinkMenu[scSeletedIndex] = ["name":name!, "price":price!]
+            drinkMenu[scSelectedIndex] = ["name":name!, "pricedrink":price!]
             ud.setObject(drinkMenu, forKey: "drink")
             ud.synchronize()
             
-            let alertController = UIAlertController(title: "\(name as! String!)  ¥\(price as! String!)", message: "編集完了しました", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "\(name as! String!)  ¥\(price as! Int!)", message: "編集完了しました", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: {action in self.move()}))
             presentViewController(alertController, animated: true, completion: nil)
         }

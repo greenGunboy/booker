@@ -30,12 +30,11 @@ class foodAddViewController: UIViewController {
         var name = foodNameText.text
         var price = Int(foodPriceText.text!)
         
-        if name == "" && price == 0 {
+        if name == "" || price == nil {
             
             let alertController = UIAlertController(title: "空白があります", message: "入力してください", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             presentViewController(alertController, animated: true, completion: nil)
-            
         }else{
             var ud = NSUserDefaults.standardUserDefaults()
             
@@ -47,7 +46,6 @@ class foodAddViewController: UIViewController {
             foodMenu.append(foodInfo)
             ud.setObject(foodMenu, forKey: "food")
             ud.synchronize()
-            print(price)
             let alertController = UIAlertController(title: "\(name as! String!)", message: "Food Listへ保存しました", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: {action in self.move()}))
             presentViewController(alertController, animated: true, completion: nil)

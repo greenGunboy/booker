@@ -13,7 +13,7 @@ class foodEditViewController: UIViewController {
     @IBOutlet weak var foodName: UITextField!
     @IBOutlet weak var foodPrice: UITextField!
     
-    var scSeletedIndex:Int = 0
+    var scSelectedIndex:Int = 0
     var foodMenu:[NSDictionary] = []
     
     override func viewDidLoad() {
@@ -31,14 +31,14 @@ class foodEditViewController: UIViewController {
         var ud = NSUserDefaults.standardUserDefaults()
         foodMenu = ud.objectForKey("food") as! [NSDictionary]
         
-        foodName.text = foodMenu[scSeletedIndex]["name"] as! String
-        foodPrice.text = foodMenu[scSeletedIndex]["price"] as! String
+        foodName.text = foodMenu[scSelectedIndex]["name"] as! String
+        foodPrice.text = "\(foodMenu[scSelectedIndex]["price"] as! Int)"
     }
     
     @IBAction func foodEditBtn(sender: UIButton) {
         
         var name = foodName.text
-        var price = foodPrice.text as! Int
+        var price = Int(foodPrice.text!)
         
         if name == "" && price == 0 {
             let alertController = UIAlertController(title: "空白があります", message: "入力してください", preferredStyle: .Alert)
@@ -47,11 +47,11 @@ class foodEditViewController: UIViewController {
         }else{
             var ud = NSUserDefaults.standardUserDefaults()
             foodMenu = ud.objectForKey("food") as! [NSDictionary]
-            foodMenu[scSeletedIndex] = ["name":name!, "price":price]
+            foodMenu[scSelectedIndex] = ["name":name!, "price":price!]
             ud.setObject(foodMenu, forKey: "food")
             ud.synchronize()
             
-            let alertController = UIAlertController(title: "\(name as! String!)  ¥\(price as! Int)", message: "編集完了しました", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "\(name as! String!)  ¥\(price! as! Int)", message: "編集完了しました", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: {action in self.move()}))
             presentViewController(alertController, animated: true, completion: nil)
         }

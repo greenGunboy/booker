@@ -13,7 +13,6 @@ class drinkAddViewController: UIViewController {
     @IBOutlet weak var drinkNameText: UITextField!
     @IBOutlet weak var drinkPriceText: UITextField!
     
-    var scSeletedIndex:Int = 0
     var drinkMenu:[NSDictionary] = []
     
     override func viewDidLoad() {
@@ -30,9 +29,9 @@ class drinkAddViewController: UIViewController {
     
     @IBAction func drinkAddBtn(sender: UIButton) {
         var name = drinkNameText.text
-        var price = drinkPriceText.text
+        var price = Int(drinkPriceText.text!)
         
-        if name == "" && price == "" {
+        if name == "" || price == nil {
             
             let alertController = UIAlertController(title: "空白があります", message: "入力してください", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
@@ -45,7 +44,7 @@ class drinkAddViewController: UIViewController {
                 drinkMenu = ud.objectForKey("drink") as! [NSDictionary]
             }
             
-            var drinkInfo: NSDictionary = ["name":name!, "price":price!]
+            var drinkInfo: NSDictionary = ["name":name!, "pricedrink":price!]
             drinkMenu.append(drinkInfo)
             ud.setObject(drinkMenu, forKey: "drink")
             ud.synchronize()

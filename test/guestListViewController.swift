@@ -11,6 +11,9 @@ import UIKit
 class guestListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var myGuestTableView: UITableView!
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var a = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +36,13 @@ class guestListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         var ud = NSUserDefaults.standardUserDefaults()
+        a = appDelegate.guestNumber
         var guestList = ud.arrayForKey("name")!
+        var guestData = ud.arrayForKey("guest\(a)drink")
+        var guestData2 = ud.arrayForKey("guest\(a)")
         guestList.removeAtIndex(indexPath.row)
+        guestData!.removeAll()
+        guestData2!.removeAll()
         ud.setObject(guestList, forKey: "name")
         tableView.reloadData()
     }

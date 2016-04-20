@@ -66,7 +66,7 @@ class foodMenuListViewController: UIViewController, UITableViewDelegate, UITable
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "foodEditView" {
             var listVC = segue.destinationViewController as! foodEditViewController
-            listVC.scSeletedIndex = selectedIndex
+            listVC.scSelectedIndex = selectedIndex
         }
     }
 

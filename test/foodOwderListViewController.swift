@@ -40,9 +40,13 @@ class foodOwderListViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        owderFoodList.delete(indexPath.row)
-        tableView.reloadData()
         
+        var ud = NSUserDefaults.standardUserDefaults()
+        var owderList = ud.arrayForKey("guest\(a)")!
+        owderList.removeAtIndex(indexPath.row)
+        ud.setObject(owderList, forKey: "guest\(a)")
+        tableView.reloadData()
+
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +64,7 @@ class foodOwderListViewController: UIViewController, UITableViewDelegate, UITabl
             owderFoodList = ud.objectForKey("guest\(a)") as! NSArray
         }
         var cell = UITableViewCell(style: .Default,reuseIdentifier: "myCell")
-        cell.textLabel?.text = "\(owderFoodList[indexPath.row]["food"] as! String)   ¥\(owderFoodList[indexPath.row]["price"] as! String)"
+        cell.textLabel?.text = "\(owderFoodList[indexPath.row]["food"] as! String)   ¥\(owderFoodList[indexPath.row]["price"] as! Int)"
         cell.accessoryType = .DisclosureIndicator
         
         return cell

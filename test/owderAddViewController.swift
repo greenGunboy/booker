@@ -16,7 +16,7 @@ class owderAddViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var drinkNumberPicker: UIPickerView!
     
     var foodAddArray:[NSDictionary] = []
-    var drinkAddArray = []
+    var drinkAddArray:[NSDictionary] = []
     var addFood = ""
     var addDrink = ""
     var foodInt = 0
@@ -90,6 +90,7 @@ class owderAddViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         if pickerView.tag == 2 {
             addDrink = drinkList[row]["name"] as! String
+            drinkPrice = row
         }
         if pickerView.tag == 3 {
             foodInt = row
@@ -100,45 +101,79 @@ class owderAddViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     @IBAction func foodAddBtn(sender: UIButton) {
-//        デリゲートを読み込み
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        選択されているゲストナンバーを変数へ
-        var a = appDelegate.guestNumber as! Int
-//        userdefaultの読み込み
-        var ud = NSUserDefaults.standardUserDefaults()
-//        udのfoodキー配列を変数へ
-        var food = ud.objectForKey("food") as! [NSDictionary]
-        var foodNamae = food[foodPrice]["name"]
-        var foodNedan = food[foodPrice]["price"] as! Int
-//        [メニュー名：値段]を配列へ
-        var foodAdd:NSDictionary = ["food":foodNamae!, "price":foodNedan]
-//        udのnameキーを変数へ
-        var udResult:NSArray = ud.objectForKey("name") as! NSArray
-//        選択されているゲストの名前を出力
-        var guestName = udResult[a]
-        print(guestName)
-//        udのゲスト名foodキーを読み込み
-        if ud.objectForKey("guest\(a)") != nil {
-            foodAddArray = ud.objectForKey("guest\(a)") as! [NSDictionary]
+        if foodInt == 0 {
+            
+            let alertController = UIAlertController(title: "個数が０個です", message: "個数を指定してください", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alertController, animated: true, completion: nil)
+            
+        }else{
+            
+            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            var a = appDelegate.guestNumber as! Int
+            var ud = NSUserDefaults.standardUserDefaults()
+            var food = ud.objectForKey("food") as! [NSDictionary]
+            var foodNamae = food[foodPrice]["name"]
+            var foodNedan = food[foodPrice]["price"] as! Int
+            
+            for var i = 0; i <= foodInt - 1; i++ {
+                
+                var foodAdd:NSDictionary = ["food":foodNamae!, "price":foodNedan]
+                var udResult:NSArray = ud.objectForKey("name") as! NSArray
+                var guestName = udResult[a]
+                
+                if ud.objectForKey("guest\(a)") != nil {
+                    foodAddArray = ud.objectForKey("guest\(a)") as! [NSDictionary]
+                }
+                
+                foodAddArray.append(foodAdd)
+                ud.setObject(foodAddArray, forKey: "guest\(a)")
+                ud.synchronize()
+            }
+            
+            let alertController = UIAlertController(title: "\(addFood)を\(foodInt)個", message: "注文完了", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alertController, animated: true, completion: nil)
         }
-//        foodInt(注文数)の数分
-//        for var i = 0; i > foodInt; i++ {
-//            配列に追加
-            foodAddArray.append(foodAdd)
-//            選択されたキーへ保存
-            ud.setObject(foodAddArray, forKey: "guest\(a)")
-            ud.synchronize()
-//        }
-        var t = Int(foodNedan + 8)
-        print(t)
-        let alertController = UIAlertController(title: "\(addFood)を\(foodInt)個", message: "注文完了", preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        presentViewController(alertController, animated: true, completion: nil)
-        
-        print(foodAdd)
     }
-    
+
+
     @IBAction func drinkAddBtn(sender: UIButton) {
+        if drinkInt == 0 {
+            
+            let alertController = UIAlertController(title: "個数が０個です", message: "個数を指定してください", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alertController, animated: true, completion: nil)
+            
+        }else{
+            
+            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            var a = appDelegate.guestNumber as! Int
+            var ud = NSUserDefaults.standardUserDefaults()
+            var drink = ud.objectForKey("drink") as! [NSDictionary]
+            var drinkNamae = drink[drinkPrice]["name"]
+            var drinkNedan = drink[drinkPrice]["pricedrink"] as! Int
+            
+            for var i = 0; i <= drinkInt - 1; i++ {
+                
+                var drinkAdd:NSDictionary = ["drink":drinkNamae!, "pricedrink":drinkNedan]
+                var udResult:NSArray = ud.objectForKey("name") as! NSArray
+                var guestName = udResult[a]
+                
+                if ud.objectForKey("guest\(a)drink") != nil {
+                    drinkAddArray = ud.objectForKey("guest\(a)drink") as! [NSDictionary]
+                }
+                
+                drinkAddArray.append(drinkAdd)
+                ud.setObject(drinkAddArray, forKey: "guest\(a)drink")
+                ud.synchronize()
+            }
+            
+            let alertController = UIAlertController(title: "\(addDrink)を\(drinkInt)個", message: "注文完了", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
